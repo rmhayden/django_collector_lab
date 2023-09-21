@@ -6,13 +6,18 @@
 
     {% for finch in finches %}
     <!-- this is NOT embedded python, though it does look like it... this is a django embedded language -->
-
+    <a href="{% url 'detail' finch.id %}">
+        <!-- the name=detail was already provided, which is why this will link! -->
     <div class="card">
         <div class="card-content">
+            
             <span class="card-title">{{ finch.name }}</span>
+            <span>Description: {{ finch.description | linebreaks }}</span>
         </div>
     </div>
+    </a>
 
     {% endfor %}
 
 {% endblock %}
+

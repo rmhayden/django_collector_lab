@@ -1,0 +1,19 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Finch Details</h1>
+
+    <!-- this is NOT embedded python, though it does look like it... this is a django embedded language -->
+ 
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ finch.name }}</span>
+            <span>{{ finch.description | linebreaks }}</span>
+            <span>{{ finch.breed | linebreaks }}</span>
+        </div>
+    </div>
+
+
+
+{% endblock %}
